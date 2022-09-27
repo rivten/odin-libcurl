@@ -1161,4 +1161,8 @@ foreign libcurl {
     
     slist_append :: proc(list: ^SList, s: ^u8) -> ^SList ---
     slist_free_all :: proc(list: ^SList) ---
+
+    easy_escape :: proc(curl: Curl, string: ^u8, len: int) -> cstring ---
+
+    free :: proc(ptr: cstring) ---
 }

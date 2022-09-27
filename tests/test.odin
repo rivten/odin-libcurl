@@ -18,6 +18,11 @@ main :: proc() {
     handle := curl.easy_init()
     assert(handle != nil)
 
+    url := "data to convert"
+    url_encoded := curl.easy_escape(nil, strings.ptr_from_string(url), len(url))
+    fmt.println(url_encoded)
+    curl.free(url_encoded)
+
     headers : ^curl.SList
     headers = curl.slist_append(headers, strings.ptr_from_string("Content-Type: application/json"))
 
