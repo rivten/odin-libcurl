@@ -4,7 +4,7 @@ import "core:fmt"
 import "core:c"
 import "core:runtime"
 import "core:strings"
-import "../curl"
+import curl ".."
 
 t :: proc "c" (data: rawptr, size: c.size_t, nmemb: c.size_t, userdata: rawptr) -> c.size_t {
     c := (^runtime.Context)(userdata)
